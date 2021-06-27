@@ -10,7 +10,6 @@ const Home = () => {
     const [searchOption, setSearchOption] = useState('shows');
 
     const isShowsSearch = searchOption === 'shows';
-
     const onSearch = () => {
         apiGet(`/search/${searchOption}?q=${input}`).then(result => {
             setResults(result);
@@ -69,8 +68,8 @@ const Home = () => {
         value = "shows"
         checked = { isShowsSearch }
         onChange = { onRadioChange }
-        /> < /
-        label >
+        /> <
+        /label>
 
         <
         label htmlFor = "actors-search" >
@@ -80,16 +79,16 @@ const Home = () => {
         value = "people"
         checked = {!isShowsSearch }
         onChange = { onRadioChange }
-        /> < /
-        label > <
+        /> <
+        /label> <
         /div>
 
         <
         button type = "button"
         onClick = { onSearch } >
         Search <
-        /button> { renderResults() } < /
-        MainPageLayout >
+        /button> { renderResults() } <
+        /MainPageLayout>
     );
 };
 
