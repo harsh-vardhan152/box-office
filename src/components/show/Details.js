@@ -1,7 +1,8 @@
 import React from 'react';
+import { DetailsWrapper } from './Details.styled';
 
 const Details = ({ status, premiered, network }) => ( <
-    div >
+    DetailsWrapper >
     <
     p >
     Status: < span > { status } < /span> < /
@@ -9,7 +10,7 @@ const Details = ({ status, premiered, network }) => ( <
     p >
     Premiered { premiered } { network ? `on ${network.name}` : null } <
     /p> < /
-    div >
+    DetailsWrapper >
 );
 
 export default Details;

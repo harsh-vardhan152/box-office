@@ -1,18 +1,18 @@
 import React from 'react';
 
 import IMG_PLACEHOLDER from '../images/not-found.png';
-// eslint-disable-next-line import/named
 import { Star } from '../styled';
+import { MainDataWrapper, Headline, TagList } from './ShowMainData.Styled';
 
 const ShowMainData = ({ name, rating, summary, tags, image }) => ( <
-    div >
+    MainDataWrapper >
     <
     img src = { image ? image.original : IMG_PLACEHOLDER }
     alt = "show-cover" / >
     <
-    div >
+    div className = "text-side" >
     <
-    div >
+    Headline >
     <
     h1 > { name } < /h1> <
     div >
@@ -21,8 +21,9 @@ const ShowMainData = ({ name, rating, summary, tags, image }) => ( <
     <
     span > { rating.average || 'N/A' } < /span> < /
     div > <
-    /div> <
-    div dangerouslySetInnerHTML = {
+    /Headline> <
+    div className = "summary"
+    dangerouslySetInnerHTML = {
         { __html: summary }
     }
     />
@@ -30,14 +31,14 @@ const ShowMainData = ({ name, rating, summary, tags, image }) => ( <
     <
     div >
     Tags: { ' ' } <
-    div > {
+    TagList > {
         tags.map((tag, i) => ( <
             span key = { i } > { tag } < /span>
         ))
     } <
-    /div> < /
+    /TagList> < /
     div > <
     /div> < /
-    div >
+    MainDataWrapper >
 );
 export default ShowMainData;
